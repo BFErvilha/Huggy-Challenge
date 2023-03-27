@@ -1,0 +1,103 @@
+/* ======================================================================================
+    RESET
+    ===================================================================================== */
+
+/** 
+ * Remove anchor tex-decoration
+*/
+
+a {
+  text-decoration: none;
+}
+
+/**
+ * Remo list-style
+ */
+
+ol,
+ul {
+  list-style: none;
+}
+
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+a,
+em,
+img,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+article,
+footer,
+header,
+nav,
+section,
+main {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+@-moz-document url-prefix() {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    text-align: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: inherit;
+    cursor: pointer;
+    text-align: inherit;
+    text-decoration: none;
+    color: inherit;
+  }
+}
