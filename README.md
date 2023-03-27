@@ -2,11 +2,18 @@
 
 Desafio técnico Huggy.io
 
-## Setup
+## Sobre
 
 Para rodar cada projeto deve-se criar um '.env'' e preencher as respectivas váriaveis de ambientes conforme mostrada na [documentão](https://developers.huggy.io/pt/API/api-v3.html#autenticacao) de como obte-las.
 
 [API Utilizada](https://api.huggy.app/v3)
+
+### Observação
+
+Respositório criado para unificar os repositórios do Client e do Server para ficarem unificados.
+
+- [Client](https://github.com/BFErvilha/Huggy-Code-Challenge)
+- [Server](https://github.com/BFErvilha/Huggy-express)
 
 ## Client
 
