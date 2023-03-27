@@ -4,7 +4,7 @@ Desafio técnico Huggy.io
 
 ## Sobre
 
-Para rodar cada projeto deve-se criar um '.env'' e preencher as respectivas váriaveis de ambientes conforme mostrada na [documentão](https://developers.huggy.io/pt/API/api-v3.html#autenticacao) de como obte-las.
+Para rodar cada projeto deve-se criar um '.env'' e preencher as respectivas váriaveis de ambientes conforme mostrada na [documentação](https://developers.huggy.io/pt/API/api-v3.html#autenticacao) de como obte-las.
 
 [API Utilizada](https://api.huggy.app/v3)
 
