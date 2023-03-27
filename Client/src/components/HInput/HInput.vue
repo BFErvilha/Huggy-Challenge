@@ -26,7 +26,7 @@ export default {
       required: true,
     },
     inputValue: {
-      type: [String, Number],
+      type: String,
       default: '',
     },
     required: {
@@ -65,7 +65,7 @@ export default {
       state.maskedInputValue =
         match[1] + ' (' + match[2] + ') ' + match[3] + '-' + match[4];
 
-      emit('update:inputValue', state.maskedInputValue);
+      emit('input', state.maskedInputValue);
     };
 
     const onInput = (event, placeholder) => {
@@ -93,8 +93,10 @@ export default {
         case 'Telefone':
         case 'Celular':
           // eslint-disable-next-line
+          let digits = inputValue.replace(/[^0-9]/g, '');
+          // eslint-disable-next-line
           const regex = /^(\d{2})(\d{2})(\d{4,5})(\d{4})$/;
-          return input === 'phone' && regex.test(inputValue);
+          return input === 'phone' && regex.test(digits);
         default:
           return false;
       }

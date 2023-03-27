@@ -65,7 +65,7 @@
               <HModal
                 v-if="isModal.view"
                 :header-actions="true"
-                :contactId="selectedContact.id"
+                :contact="selectedContact"
                 @closeModal="closeModal('view')"
                 @deleteContact="openModal('delete', $event)"
                 @editContact="openModal('editCreate', $event)"
@@ -133,6 +133,7 @@
                     <HInput
                       label="Nome"
                       :input-value="selectedContact.name"
+                      v-model="contactForm.name"
                       @input="contactForm.name = $event"
                       :required="isInvalid"
                       :isInvalid="invalidField.name"
@@ -201,6 +202,7 @@
                     <button class="cancel" @click="closeModal('editCreate')">
                       Cancelar
                     </button>
+                    {{ contactForm.id }}
                     <button
                       class="save"
                       v-if="contactForm.id"
@@ -305,7 +307,7 @@ export default {
       toast.value.show = false;
     };
 
-    const openModal = (type, item = null) => {
+    const openModal = async (type, item = null) => {
       if (item !== null) {
         if (type === 'view') {
           selectedContact.value = item;
@@ -320,11 +322,6 @@ export default {
           if (typeof item === 'object') {
             selectedContact.value = item;
             contactForm.value.id = item.id;
-          } else {
-            selectedContact.value = contacts.value.filter(
-              (element) => element.id === item,
-            );
-            contactForm.value.id = item;
           }
           isModal.value.view = false;
           isModal.value.editCreate = true;
@@ -345,6 +342,7 @@ export default {
       }
       if (type === 'editCreate') {
         selectedContact.value = '';
+        contactForm.value.id = '';
         return (isModal.value.editCreate = false);
       }
     };
@@ -385,17 +383,20 @@ export default {
     const validateForm = (form) => {
       let formObject = Object.entries(form);
       formObject.forEach(([key, value]) => {
-        if (value.length === 0) {
-          if (Object.prototype.hasOwnProperty.call(invalidField.value, key)) {
-            invalidField.value[key] = true;
-            isInvalid.value = true;
-          }
-        } else {
-          if (Object.prototype.hasOwnProperty.call(invalidField.value, key)) {
-            invalidField.value[key] = false;
+        if (value !== null) {
+          if (value.length === 0) {
+            if (Object.prototype.hasOwnProperty.call(invalidField.value, key)) {
+              invalidField.value[key] = true;
+              isInvalid.value = true;
+            }
+          } else {
+            if (Object.prototype.hasOwnProperty.call(invalidField.value, key)) {
+              invalidField.value[key] = false;
+            }
           }
         }
       });
+
       return !Object.values(invalidField.value).some((value) => value === true);
     };
 

@@ -5,11 +5,11 @@
         <slot name="header"></slot>
         <div class="header-actions" v-if="headerActions">
           <img
-            @click="doAction('delete', contactId)"
+            @click="doAction('delete', contact.id)"
             src="@/assets/images/icon/delete.svg"
           />
           <img
-            @click="doAction('edit', contactId)"
+            @click="doAction('edit', contact)"
             src="@/assets/images/icon/edit.svg"
           />
           <img @click="closeModal" src="@/assets/images/icon/close.svg" />
@@ -30,7 +30,7 @@ export default {
   name: 'HModal',
   props: {
     headerActions: { type: Boolean, default: false },
-    contactId: { type: String, default: '' },
+    contact: { type: String, default: '' },
     size: { type: String, default: '' },
   },
   setup(props, { emit }) {
