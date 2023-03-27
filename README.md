@@ -8,7 +8,7 @@ Para rodar cada projeto deve-se criar um '.env'' e preencher as respectivas vár
 
 [API Utilizada](https://api.huggy.app/v3)
 
-### Client
+## Client
 
 Criar .env com as seguintes variaveis:
 
@@ -19,7 +19,7 @@ Criar .env com as seguintes variaveis:
 
 após isso executar os passos de instalação
 
-## Project setup
+### Project setup
 
 ```
 npm install
